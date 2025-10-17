@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - UdharGuru</title>
+  <meta name="description" content="UdharGuru is a modern ledger app for easy credit/debit tracking, voice entry, and PDF export." />
+  <meta property="og:title" content="About UdharGuru" />
+  <meta property="og:description" content="Modern ledger app with voice entry, PDF export, and privacy-first design." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="app_icon.png" type="image/png" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 16px; color: #222; line-height: 1.6; }
+    h1 { color: #10B981; margin-bottom: 8px; }
+    h2 { color: #059669; margin-top: 24px; margin-bottom: 12px; font-size: 20px; }
+    h3 { color: #047857; margin-top: 16px; margin-bottom: 8px; font-size: 16px; }
+    p { line-height: 1.6; margin-bottom: 12px; }
+    ul { margin-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    .example { background: #f0fdf4; padding: 12px; border-left: 3px solid #10B981; margin: 12px 0; border-radius: 4px; }
+    .tip { background: #eff6ff; padding: 12px; border-left: 3px solid #3B82F6; margin: 16px 0; border-radius: 4px; }
+    /* Header/Footer/Dark Mode */
+    html { scroll-behavior: smooth; }
+    header { position: sticky; top: 0; z-index: 100; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    nav { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .brand img { height: 32px; width: 32px; border-radius: 8px; }
+    nav ul { list-style: none; display: flex; gap: 16px; margin: 0; padding: 0; }
+    nav a { color: #fff; text-decoration: none; opacity: 0.95; }
+    nav a:hover { opacity: 1; }
+    .toggle { background: #ffffff; color: #4f46e5; border: 0; border-radius: 999px; padding: 6px 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    footer { background: #2c3e50; color: #fff; margin-top: 32px; padding: 24px 20px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .footer-inner a { color: #fff; text-decoration: none; opacity: 0.8; display: block; margin: 6px 0; }
+    .footer-inner a:hover { opacity: 1; }
+    #backToTop { position: fixed; right: 16px; bottom: 16px; padding: 10px 14px; border-radius: 999px; border: 0; background: #4f46e5; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.2); cursor: pointer; display: none; }
+    [data-theme="dark"] body { background: #0b1020; color: #e6e8ef; }
+    [data-theme="dark"] .example { background: #0e2a22; border-left-color: #10B981; }
+    [data-theme="dark"] .tip { background: #0e1a2f; border-left-color: #3B82F6; }
+    [data-theme="dark"] footer { background: #0f172a; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">
+        <img src="app_icon.png" alt="UdharGuru" onerror="this.style.display='none'" />
+        <span>UdharGuru</span>
+      </div>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#screenshots">Screenshots</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="security.html">Security</a></li>
+      </ul>
+      <button class="toggle" id="themeToggle">Dark Mode</button>
+    </nav>
+  </header>
+  <h1>About UdharGuru</h1>
+  <p>
+    UdharGuru is a simple and fast ledger app designed to help shop owners
+    track credits (You Got) and debits (You Gave) with ease. Our goal is to
+    save time, reduce mistakes, and provide clear statements.
+  </p>
+  <p>
+    Features include adding transactions, voice entry, generating PDFs,
+    and sharing summaries. We respect user privacy and never access your data
+    without permission.
+  </p>
+
+  <h2>📖 UdharGuru – App Guide</h2>
+
+  <h3>1) Create a Customer</h3>
+  <ul>
+    <li>On the Home screen, tap the "+" icon to add a new customer.</li>
+    <li>Duplicate names in the same profile are prevented – the app will alert you.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Add a customer named "Raju".</div>
+
+  <h3>2) Switch Profile/Account</h3>
+  <ul>
+    <li>From the drawer, choose "Switch Profile" – select All Profiles or a specific one.</li>
+    <li>Manage customers separately across different profiles.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Manage Shop and Office profiles separately.</div>
+
+  <h3>3) Add a Transaction (You Gave / You Got)</h3>
+  <ul>
+    <li>On the Customer screen or Add Transaction, enter amount, note, and date.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> "You Got ₹1000" with note: "Advance".</div>
+
+  <h3>4) Voice Entry 🎤</h3>
+  <ul>
+    <li>Tap the green mic button on the Home screen.</li>
+    <li>Speak naturally: "Gave 100 to Raju" or "Got 500 from Sumit".</li>
+    <li>The app auto-detects customer name, amount, and type (gave/got).</li>
+    <li>Review the details and edit if needed.</li>
+    <li>Tap Save – the entry will be saved.</li>
+  </ul>
+  <div class="example">
+    <strong>Examples:</strong><br>
+    • "Gave 100 to Raju" → You Gave ₹100 to Raju<br>
+    • "Got 500 from Sumit" → You Got ₹500 from Sumit<br>
+    • "Gave 50 to Amit for vegetables" → You Gave ₹50 to Amit (Reason: vegetables)
+  </div>
+
+  <h3>5) Export Your Data (PDF)</h3>
+  <ul>
+    <li>Tap the export icon in the app bar, or choose "Export your data" from the drawer.</li>
+    <li>Select a date range.</li>
+    <li>A PDF with customer-wise totals will be generated – you can Save/Share it.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Export a month-end PDF for 1 Sep – 30 Sep.</div>
+
+  <h3>6) Undo Support</h3>
+  <ul>
+    <li>Right after Delete or Edit, an UNDO appears in the snackbar – use it to revert mistakes instantly.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Deleted an entry by mistake? Tap UNDO to restore.</div>
+
+  <h3>7) Dark Mode</h3>
+  <ul>
+    <li>Use the "Dark Mode" option in the drawer to change theme.</li>
+    <li>Toggle the switch to switch between light and dark modes.</li>
+  </ul>
+
+  <h3>8) Share / Rate / Privacy</h3>
+  <ul>
+    <li>The drawer includes Share App, Rate Us, About, Privacy Policy, and Security links.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Want to share the app with a friend? Use Share App.</div>
+
+  <h3>9) Recycle Bin (After Delete)</h3>
+  <ul>
+    <li>Deleted transactions move to the Recycle Bin for 5 days.</li>
+    <li>From the Recycle Bin, you can Restore or Delete now (permanent).</li>
+    <li>An auto-delete date is shown – after that date, the entry is automatically removed.</li>
+  </ul>
+  <div class="example"><strong>Example:</strong> Deleted by mistake? Go to Recycle Bin and tap Restore.</div>
+
+  <div class="tip">
+    <strong>💡 Tip:</strong> The app works offline too! Add customers and entries – your data will sync automatically when internet returns.
+  </div>
+
+  <h2>Support</h2>
+  <p>
+    Need help or have feedback? Email us at
+    <a href="mailto:akhilbharti208@gmail.com">akhilbharti208@gmail.com</a>.
+  </p>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>UdharGuru</h3>
+        <p>Your trusted ledger management partner</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screenshots">Screenshots</a>
+        <a href="about.html">About</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: support@udharguru.com</p>
+      </div>
+    </div>
+    <div style="text-align:center; opacity:0.8; margin-top:16px;">© 2025 UdharGuru. All rights reserved.</div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script>
+    (function() {
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        const saved = localStorage.getItem('theme');
+        if (saved) root.setAttribute('data-theme', saved);
+        function setLabel(theme) { toggle.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode'; }
+        setLabel(saved || 'light');
+        toggle.addEventListener('click', function() {
+          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          setLabel(next);
+        });
+      }
+      const btn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      }, { passive: true });
+      btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    })();
+  </script>
+</body>
+</html>

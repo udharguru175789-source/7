@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udhar Guru - Your Trusted Credit Ledger</title>
+    <link rel="icon" href="app_icon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: radial-gradient(1200px 800px at 10% 10%, rgba(118,75,162,0.15), rgba(102,126,234,0) 40%),
+                        radial-gradient(1200px 800px at 90% 30%, rgba(102,126,234,0.15), rgba(118,75,162,0) 40%),
+                        linear-gradient(180deg, #ffffff 0%, #f7f8ff 100%);
+            perspective: 1200px;
+            overflow-x: hidden;
+        }
+
+        .depth-shadow {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 12px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 110px 2rem 100px;
+            text-align: center;
+            position: relative;
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .hero::before, .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.35;
+            transform: translateZ(-200px) scale(1.2);
+        }
+
+        .hero::before {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle at 30% 30%, #ffffff55, transparent 60%);
+            top: -120px; left: -120px;
+        }
+
+        .hero::after {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle at 70% 70%, #00000022, transparent 60%);
+            bottom: -160px; right: -160px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transform-style: preserve-3d;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px) translateZ(20px);
+            box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 2rem;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transform-style: preserve-3d;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) translateZ(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.16);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .screenshots-slider {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 3rem 0 4rem;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshot-item {
+            min-width: 280px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Remove 3D modifiers for screenshots */
+
+        /* About Section */
+        .about {
+            padding: 80px 2rem;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .screenshot-item { min-width: 240px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="app_icon.png" alt="Udhar Guru Logo" id="logoImg">
+                <span>Udhar Guru</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="security.html">Security</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to Udhar Guru</h1>
+        <p>Your trusted partner for credit and ledger management</p>
+        <a href="#" class="download-btn" id="downloadBtn">📱 Download App</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Easy Credit Tracking</h3>
+                    <p>Manage all your credit and debit transactions in one place</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Reminders</h3>
+                    <p>Get automatic reminders to ensure on-time payments</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure and Private</h3>
+                    <p>Your data is fully protected and encrypted</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detailed Reports</h3>
+                    <p>View comprehensive reports for all your transactions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Multiple Users</h3>
+                    <p>Track credit across multiple people or profiles</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>User Friendly</h3>
+                    <p>Simple, clean, and easy-to-use interface</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Voice Entry</h3>
+                    <p>Add transactions by speaking naturally—fast and hands-free</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>PDF Export</h3>
+                    <p>Export professional statements with customer-wise summaries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">App Screenshots</h2>
+            <div class="screenshots-slider" id="screenshotsContainer">
+                <div class="screenshot-item">
+                    <img src="1.jpeg" alt="Screenshot 1">
+                </div>
+                <div class="screenshot-item">
+                    <img src="2.jpeg" alt="Screenshot 2">
+                </div>
+                <div class="screenshot-item">
+                    <img src="3.jpeg" alt="Screenshot 3">
+                </div>
+                <div class="screenshot-item">
+                    <img src="4.jpeg" alt="Screenshot 4">
+                </div>
+                <div class="screenshot-item">
+                    <img src="5.jpeg" alt="Screenshot 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Udhar Guru is a modern, user-friendly ledger app that helps you manage all your credit and debit transactions with ease.</p>
+                <p>Our goal is to simplify and organize your financial life. Whether you gave money to someone or received it, Udhar Guru helps you keep track of everything.</p>
+                <p><a href="about.html" style="color: #667eea; font-weight: bold;">Learn more →</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Udhar Guru</h3>
+                <p>Your trusted ledger management partner</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="security.html">Security</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@udharguru.com</p>
+                <p>Contact Us</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Udhar Guru. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Download button functionality
+        document.getElementById('downloadBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // APK download link yahan dalein
+            alert('App download link yahan add karein. Apna APK file upload karke link yahan daalein.');
+            // window.location.href = 'your-app-download-link.apk';
+        });
+
+        // Logo placeholder handling
+        document.getElementById('logoImg').addEventListener('error', function() {
+            this.style.display = 'none';
+        });
+
+        // Screenshot placeholder handling
+        const screenshots = document.querySelectorAll('.screenshot-item img');
+        screenshots.forEach(img => {
+            img.addEventListener('error', function() {
+                this.parentElement.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                this.parentElement.style.display = 'flex';
+                this.parentElement.style.alignItems = 'center';
+                this.parentElement.style.justifyContent = 'center';
+                this.parentElement.style.minHeight = '500px';
+                this.parentElement.innerHTML = '<p style="color: white; font-size: 1.2rem;">Screenshot</p>';
+            });
+        });
+
+        // 3D tilt for feature cards
+        const cards = document.querySelectorAll('.feature-card');
+        const constrain = 12; // smaller = stronger tilt
+        function tiltCard(event, card) {
+            const rect = card.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = event.clientX - cx;
+            const dy = event.clientY - cy;
+            const rx = (+dy / constrain);
+            const ry = (-dx / constrain);
+            card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(14px)`;
+        }
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => tiltCard(e, card));
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Reduce parallax intensity (subtle)
+        const hero = document.querySelector('.hero');
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            hero.style.transform = `translateY(${y * 0.05}px)`;
+        });
+
+        // Simple screenshot fade-in on scroll
+        const slider = document.getElementById('screenshotsContainer');
+        const screenshotItems = document.querySelectorAll('.screenshot-item');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transition = 'transform .3s ease, opacity .3s ease';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.15, root: slider });
+        screenshotItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(14px)';
+            io.observe(item);
+        });
+    </script>
+</body>
+</html>

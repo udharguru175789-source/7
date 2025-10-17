@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security - UdharGuru</title>
+  <meta name="description" content="UdharGuru security: encryption, authentication, permissions, and reporting vulnerabilities." />
+  <meta property="og:title" content="UdharGuru Security" />
+  <meta property="og:description" content="We take security seriously with encryption, OTP auth, and secure backups." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="app_icon.png" type="image/png" />
+  <style>
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0;
+      padding: 20px; 
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 { 
+      color: #0b8043; 
+      font-size: 28px;
+      margin-bottom: 10px;
+      border-bottom: 3px solid #0b8043;
+      padding-bottom: 10px;
+    }
+    h2 { 
+      margin-top: 24px;
+      color: #0b8043;
+      font-size: 20px;
+    }
+    p { 
+      line-height: 1.8; 
+      margin: 12px 0;
+    }
+    ul { 
+      line-height: 1.8;
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    .highlight {
+      background: #e8f5e9;
+      padding: 15px;
+      border-left: 4px solid #0b8043;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .feature-box {
+      background: #f1f8f4;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border: 1px solid #c8e6c9;
+    }
+    .security-badge {
+      display: inline-block;
+      background: #0b8043;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin: 5px 5px 5px 0;
+    }
+    a {
+      color: #0b8043;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.1)">
+    <nav style="max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:10px;font-weight:700">
+        <img src="app_icon.png" alt="UdharGuru" style="height:32px;width:32px;border-radius:8px" onerror="this.style.display='none'" />
+        <span>UdharGuru</span>
+      </div>
+      <ul style="list-style:none;display:flex;gap:16px;margin:0;padding:0">
+        <li><a href="index.html#home" style="color:#fff;text-decoration:none">Home</a></li>
+        <li><a href="index.html#features" style="color:#fff;text-decoration:none">Features</a></li>
+        <li><a href="index.html#screenshots" style="color:#fff;text-decoration:none">Screenshots</a></li>
+        <li><a href="about.html" style="color:#fff;text-decoration:none">About</a></li>
+        <li><a href="privacy-policy.html" style="color:#fff;text-decoration:none">Privacy</a></li>
+        <li><a href="security.html" style="color:#fff;text-decoration:none">Security</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>🛡️ Security</h1>
+    <p style="font-size: 16px; color: #666;">
+      <strong>Last Updated:</strong> October 2025
+    </p>
+    
+    <div class="highlight">
+      <p><strong>We take security very seriously.</strong> Your ledger data is securely stored under your account. All sensitive operations use encrypted connections.</p>
+    </div>
+
+    <h2>🔐 Authentication & Access Control</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>Phone OTP Verification:</strong> Phone number verification is required for login</li>
+        <li><strong>Firebase Authentication:</strong> Industry-standard authentication system</li>
+        <li><strong>Session Management:</strong> Automatic logout on suspicious activity</li>
+        <li><strong>Data Isolation:</strong> Every user's data is completely isolated</li>
+      </ul>
+    </div>
+
+    <h2>🔒 Data Encryption</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>HTTPS/TLS:</strong> All network requests are encrypted</li>
+        <li><strong>At-Rest Encryption:</strong> Data in Firebase is stored in encrypted form</li>
+        <li><strong>In-Transit Security:</strong> End-to-end encryption during data transfer</li>
+        <li><strong>Secure Backup:</strong> Cloud backups are also encrypted</li>
+      </ul>
+    </div>
+
+    <h2>🎤 Voice Entry Security</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>No Audio Storage:</strong> No audio recording is stored</li>
+        <li><strong>Local Processing:</strong> Voice-to-text is processed on-device</li>
+        <li><strong>Minimal Data:</strong> Only parsed text (name, amount) is saved</li>
+        <li><strong>Optional Feature:</strong> You can disable this anytime</li>
+      </ul>
+    </div>
+
+    <h2>📱 App Permissions Security</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>Minimal Permissions:</strong> Only essential permissions are requested</li>
+        <li><strong>Scoped Access:</strong> Photos permission is limited to selected images</li>
+        <li><strong>No Background Access:</strong> The app does not access data in the background</li>
+        <li><strong>Transparent Usage:</strong> Every permission's purpose is clearly explained</li>
+      </ul>
+    </div>
+
+    <h2>🔍 Regular Security Measures</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>Code Reviews:</strong> Regular security audits</li>
+        <li><strong>Dependency Updates:</strong> Latest security patches applied</li>
+        <li><strong>Vulnerability Scanning:</strong> Automated security checks</li>
+        <li><strong>Incident Response:</strong> Quick response to security issues</li>
+      </ul>
+    </div>
+
+    <h2>✅ Your Security Controls</h2>
+    <div class="feature-box">
+      <ul>
+        <li><strong>Logout:</strong> Log out from any device</li>
+        <li><strong>Delete Data:</strong> Delete your data anytime</li>
+        <li><strong>Export Data:</strong> Export your data to keep a backup</li>
+        <li><strong>Account Deletion:</strong> Request full account deletion</li>
+      </ul>
+    </div>
+
+    <h2>🚨 Report Security Issues</h2>
+    <div class="highlight">
+      <p>
+        If you discover a security issue, please report it immediately:<br>
+        <a href="mailto:akhilbharti208@gmail.com">📧 akhilbharti208@gmail.com</a>
+      </p>
+      <p style="margin-top: 10px; color: #666;">
+        We take all security reports seriously and fix them as quickly as possible.
+      </p>
+    </div>
+
+    <h2>🏆 Security Badges</h2>
+    <div style="margin: 20px 0;">
+      <span class="security-badge">🔒 HTTPS Encrypted</span>
+      <span class="security-badge">🛡️ Firebase Secured</span>
+      <span class="security-badge">✅ OTP Verified</span>
+      <span class="security-badge">🔐 Data Isolated</span>
+    </div>
+
+    <h2>📞 Support</h2>
+    <div class="highlight">
+      <p>
+        For any security-related questions, contact:<br>
+        <a href="mailto:akhilbharti208@gmail.com">📧 akhilbharti208@gmail.com</a>
+      </p>
+    </div>
+  </div>
+  <footer style="background:#2c3e50;color:#fff;margin-top:32px;padding:24px 20px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <div>
+        <h3>UdharGuru</h3>
+        <p>Your trusted ledger management partner</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html#home" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">Home</a>
+        <a href="index.html#features" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">Features</a>
+        <a href="index.html#screenshots" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">Screenshots</a>
+        <a href="about.html" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">About</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">Privacy Policy</a>
+        <a href="security.html" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">Security</a>
+        <a href="about.html" style="color:#fff;text-decoration:none;opacity:.8;display:block;margin:6px 0">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: support@udharguru.com</p>
+      </div>
+    </div>
+    <div style="text-align:center;opacity:.8;margin-top:16px">© 2025 UdharGuru. All rights reserved.</div>
+  </footer>
+</body>
+</html>
